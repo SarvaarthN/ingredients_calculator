@@ -6,12 +6,13 @@ import { formatAmount, formatFactor, formatGrams, parseAmount, quantityToInput }
 import {
   applyFactor,
   baseIngredient,
+  bulkDisplayUnits,
   factorByBaseIngredient,
   factorByServings,
   factorByYield,
   recipeTotalGrams,
 } from "@/lib/scale";
-import { convert, unitLabel } from "@/lib/units";
+import { BULK_UNIT_GROUPS, convert, unitLabel } from "@/lib/units";
 import type { Recipe, ScaleMode } from "@/lib/types";
 
 const TABS: { mode: ScaleMode; n: string; title: string; sub: string }[] = [
@@ -41,8 +42,28 @@ export function RecipeScaler({ recipe }: { recipe: Recipe }) {
   );
   const [yieldUnit, setYieldUnit] = useState("g");
 
-  // Per-row unit overrides in the results table.
+  // Per-row unit overrides in the results table, and the whole-column control
+  // above it. "custom" means individual rows have been changed since the last
+  // bulk choice, so no single unit describes the column any more.
   const [displayUnits, setDisplayUnits] = useState<Record<string, string>>({});
+  const [bulkUnit, setBulkUnit] = useState("");
+
+  /** Re-display every ingredient in `target` at once. */
+  function applyBulkUnit(target: string) {
+    setBulkUnit(target);
+    setDisplayUnits(bulkDisplayUnits(recipe, target).units);
+  }
+
+  /** A single row overridden by hand — no one unit describes the column now. */
+  function setRowUnit(id: string, unit: string) {
+    setDisplayUnits((prev) => ({ ...prev, [id]: unit }));
+    setBulkUnit("custom");
+  }
+
+  const bulkKeptOriginal = useMemo(
+    () => (bulkUnit === "custom" ? [] : bulkDisplayUnits(recipe, bulkUnit).keptOriginal),
+    [bulkUnit, recipe],
+  );
 
   const { factor, error } = useMemo((): { factor: number | null; error?: string } => {
     if (mode === "servings") {
@@ -85,6 +106,7 @@ export function RecipeScaler({ recipe }: { recipe: Recipe }) {
     setYieldQty(originalTotal.grams === null ? "" : quantityToInput(Math.round(originalTotal.grams)));
     setYieldUnit("g");
     setDisplayUnits({});
+    setBulkUnit("");
   }
 
   return (
@@ -283,17 +305,42 @@ export function RecipeScaler({ recipe }: { recipe: Recipe }) {
             {showing && result.totalGrams !== null && (
               <span className="chip tnum">{formatGrams(result.totalGrams)} total</span>
             )}
-            {Object.keys(displayUnits).length > 0 && (
-              <button
-                type="button"
-                className="btn btn-ghost btn-sm no-print"
-                onClick={() => setDisplayUnits({})}
+            <label className="flex items-center gap-2 no-print">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-muted whitespace-nowrap">
+                Show all in
+              </span>
+              <select
+                className="select text-[13px] py-1.5 w-[150px]"
+                value={bulkUnit}
+                onChange={(e) => applyBulkUnit(e.target.value)}
               >
-                Original units
-              </button>
-            )}
+                <option value="">Original units</option>
+                {bulkUnit === "custom" && (
+                  <option value="custom" disabled>
+                    Mixed
+                  </option>
+                )}
+                {BULK_UNIT_GROUPS.map((group) => (
+                  <optgroup key={group.kind} label={group.title}>
+                    {group.units.map((unit) => (
+                      <option key={unit.id} value={unit.id}>
+                        {unit.name}
+                      </option>
+                    ))}
+                  </optgroup>
+                ))}
+              </select>
+            </label>
           </div>
         </div>
+
+        {bulkKeptOriginal.length > 0 && (
+          <p className="mb-3 text-[13px] text-muted no-print">
+            {bulkKeptOriginal.join(", ")} {bulkKeptOriginal.length === 1 ? "is" : "are"} counted
+            rather than measured, so {bulkKeptOriginal.length === 1 ? "it keeps" : "they keep"} the
+            original unit.
+          </p>
+        )}
 
         <div className="card scroll-x">
           <table className="table">
@@ -353,9 +400,7 @@ export function RecipeScaler({ recipe }: { recipe: Recipe }) {
                           value={ing.displayUnit}
                           ariaLabel={`Display unit for ${ing.name}`}
                           className="select text-[13px] py-1.5"
-                          onChange={(unit) =>
-                            setDisplayUnits((prev) => ({ ...prev, [ing.id]: unit }))
-                          }
+                          onChange={(unit) => setRowUnit(ing.id, unit)}
                         />
                       )}
                     </td>

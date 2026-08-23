@@ -203,3 +203,9 @@ export const UNIT_GROUPS: { kind: UnitKind; title: string; units: UnitDef[] }[] 
   { kind: "volume", title: "Volume", units: UNITS.filter((u) => u.kind === "volume") },
   { kind: "count", title: "Count", units: UNITS.filter((u) => u.kind === "count") },
 ];
+
+/**
+ * Units offered when re-displaying a whole ingredient list at once. Counts are
+ * left out: "show everything in cloves" is never what anyone means.
+ */
+export const BULK_UNIT_GROUPS = UNIT_GROUPS.filter((g) => g.kind !== "count");

@@ -93,6 +93,30 @@ export function factorByYield(
   return { factor: targetGrams / baseGrams, baseGrams };
 }
 
+/**
+ * Display-unit map that puts the whole ingredient list into `target` at once.
+ *
+ * Ingredients that cannot reach the target — counts like bay leaves, which have
+ * no weight — are deliberately left out of the map so they fall back to their own
+ * unit, rather than every such row rendering as "n/a".
+ */
+export function bulkDisplayUnits(
+  recipe: Recipe,
+  target: string,
+): { units: Record<string, string>; keptOriginal: string[] } {
+  const units: Record<string, string> = {};
+  const keptOriginal: string[] = [];
+  if (!target) return { units, keptOriginal };
+
+  for (const ing of recipe.ingredients) {
+    if (ing.quantity === null) continue;
+    if (convert(1, ing.unit, target, { ingredient: ing.name }) !== null) units[ing.id] = target;
+    else keptOriginal.push(ing.name);
+  }
+
+  return { units, keptOriginal };
+}
+
 /** Apply a factor to every ingredient, optionally showing each in a different unit. */
 export function applyFactor(
   recipe: Recipe,

@@ -3,6 +3,7 @@ import { test, describe } from "node:test";
 import {
   applyFactor,
   baseIngredient,
+  bulkDisplayUnits,
   factorByBaseIngredient,
   factorByServings,
   factorByYield,
@@ -154,6 +155,63 @@ describe("§03 — by output", () => {
     const result = factorByYield(countOnly, 100, "g");
     assert.equal(result.factor, null);
     assert.match(result.error ?? "", /no weighable ingredients/);
+  });
+});
+
+describe("bulkDisplayUnits — changing the whole column at once", () => {
+  test("puts every convertible ingredient into the target unit", () => {
+    const { units } = bulkDisplayUnits(paav, "cup");
+    assert.deepEqual(units, { i1: "cup", i2: "cup", i3: "cup", i4: "cup", i5: "cup", i6: "cup" });
+  });
+
+  test("mixed source units all reach a common weight unit", () => {
+    const { units, keptOriginal } = bulkDisplayUnits(stock, "oz");
+    // Grams and millilitres both convert to ounces…
+    assert.equal(units.j1, "oz");
+    assert.equal(units.j2, "oz");
+    // …bay leaves cannot, so they are left out and reported.
+    assert.equal(units.j3, undefined);
+    assert.deepEqual(keptOriginal, ["Bay leaves"]);
+  });
+
+  test("as-per-taste rows are never given a display unit", () => {
+    const { units, keptOriginal } = bulkDisplayUnits(stock, "g");
+    assert.equal(units.j4, undefined);
+    assert.ok(!keptOriginal.includes("Salt"));
+  });
+
+  test("the empty target clears every override", () => {
+    const { units, keptOriginal } = bulkDisplayUnits(paav, "");
+    assert.deepEqual(units, {});
+    assert.deepEqual(keptOriginal, []);
+  });
+
+  test("feeding the map to applyFactor converts the whole list", () => {
+    const { units } = bulkDisplayUnits(paav, "oz");
+    const result = applyFactor(paav, 1, units);
+
+    for (const ing of result.ingredients) {
+      assert.equal(ing.displayUnit, "oz");
+    }
+    // 250 g of flour is 8.82 oz.
+    close(result.ingredients[0].displayValue, 250 / 28.349523125, 0.001);
+  });
+
+  test("rows that keep their unit still show a real number, not n/a", () => {
+    const { units } = bulkDisplayUnits(stock, "oz");
+    const result = applyFactor(stock, 1, units);
+    const bay = result.ingredients.find((i) => i.id === "j3")!;
+
+    assert.equal(bay.displayUnit, "");
+    close(bay.displayValue, 2);
+  });
+
+  test("a per-row override survives on top of a bulk choice", () => {
+    const { units } = bulkDisplayUnits(paav, "cup");
+    const result = applyFactor(paav, 1, { ...units, i2: "tsp" });
+
+    assert.equal(result.ingredients.find((i) => i.id === "i1")!.displayUnit, "cup");
+    assert.equal(result.ingredients.find((i) => i.id === "i2")!.displayUnit, "tsp");
   });
 });
 
