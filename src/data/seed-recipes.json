@@ -1,0 +1,1022 @@
+[
+  {
+    "name": "Laadi Paav",
+    "description": "",
+    "servings": 1,
+    "servingLabel": "batch",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": 250,
+        "unit": "g",
+        "note": "always 100%",
+        "isBase": true
+      },
+      {
+        "name": "Yeast",
+        "quantity": 3.125,
+        "unit": "g",
+        "note": "1% - 1,5%",
+        "isBase": false
+      },
+      {
+        "name": "Milk+water",
+        "quantity": 175,
+        "unit": "g",
+        "note": "Milk or milk + water · 65 to 75%",
+        "isBase": false
+      },
+      {
+        "name": "Butter",
+        "quantity": 20,
+        "unit": "g",
+        "note": "softened and room temp · 6% to 10 %",
+        "isBase": false
+      },
+      {
+        "name": "Salt",
+        "quantity": 4.375,
+        "unit": "g",
+        "note": "1,5 to 2%",
+        "isBase": false
+      },
+      {
+        "name": "Sugar",
+        "quantity": 17.5,
+        "unit": "g",
+        "note": "5 to 8 %",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Paav bhaji",
+    "description": "",
+    "servings": 1,
+    "servingLabel": "batch",
+    "ingredients": [
+      {
+        "name": "Potato",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Capsicum",
+        "quantity": 50,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Peas",
+        "quantity": 50,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Flower",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Ginger",
+        "quantity": 7,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Garlic",
+        "quantity": 5,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Chillies",
+        "quantity": 2,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Onion",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Tomatoes",
+        "quantity": 200,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Paav bhaji masala",
+        "quantity": null,
+        "unit": "",
+        "note": "as per taste",
+        "isBase": false
+      },
+      {
+        "name": "Salt",
+        "quantity": null,
+        "unit": "",
+        "note": "as per taste",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Chocolate Cake",
+    "description": "",
+    "servings": 1,
+    "servingLabel": "batch",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": 219,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Cocoa",
+        "quantity": 64,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": 7,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Baking soda",
+        "quantity": 9,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Salt",
+        "quantity": 6,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Fine Sugar",
+        "quantity": 400,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Eggs",
+        "quantity": 120,
+        "unit": "g",
+        "note": "2 large, each of 57-64gms",
+        "isBase": false
+      },
+      {
+        "name": "Vanilla essence",
+        "quantity": 12,
+        "unit": "g",
+        "note": "2tsp",
+        "isBase": false
+      },
+      {
+        "name": "Oil",
+        "quantity": 96,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Milk",
+        "quantity": 241.55,
+        "unit": "g",
+        "note": "at Room temperature",
+        "isBase": false
+      },
+      {
+        "name": "Water",
+        "quantity": 240,
+        "unit": "g",
+        "note": "Boiling hot",
+        "isBase": false
+      },
+      {
+        "name": "Instant Coffee",
+        "quantity": 12,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Malai Kofta",
+    "description": "",
+    "servings": 1,
+    "servingLabel": "batch",
+    "ingredients": [
+      {
+        "name": "Potato",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Capsicum",
+        "quantity": 50,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Peas",
+        "quantity": 50,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Flower",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Ginger",
+        "quantity": 7,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Garlic",
+        "quantity": 5,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Chillies",
+        "quantity": 2,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Onion",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Tomatoes",
+        "quantity": 200,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Paav bhaji masala",
+        "quantity": null,
+        "unit": "",
+        "note": "as per taste",
+        "isBase": false
+      },
+      {
+        "name": "Salt",
+        "quantity": null,
+        "unit": "",
+        "note": "as per taste",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Chicken Stock",
+    "description": "",
+    "servings": 1,
+    "servingLabel": "batch",
+    "ingredients": [
+      {
+        "name": "Chicken bones",
+        "quantity": 1000,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Onions",
+        "quantity": 200,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Carrots",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Celery stalks",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Olive oil",
+        "quantity": 30,
+        "unit": "ml",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Water",
+        "quantity": 1000,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Bay leaves",
+        "quantity": 2,
+        "unit": "",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Black peppercorns",
+        "quantity": 5,
+        "unit": "",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Fresh parsley",
+        "quantity": 10,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Thyme",
+        "quantity": 10,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Salt",
+        "quantity": null,
+        "unit": "",
+        "note": "as per taste",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Vegetable Stock",
+    "description": "",
+    "servings": 1,
+    "servingLabel": "batch",
+    "ingredients": [
+      {
+        "name": "Onions",
+        "quantity": 500,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Carrots",
+        "quantity": 250,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Celery stalks",
+        "quantity": 250,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Mushrooms",
+        "quantity": 150,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Garlic",
+        "quantity": 10,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Water",
+        "quantity": 1500,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Bay leaves",
+        "quantity": 2,
+        "unit": "",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Black peppercorns",
+        "quantity": 5,
+        "unit": "",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Fresh parsley",
+        "quantity": 10,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Thyme",
+        "quantity": 10,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Salt",
+        "quantity": null,
+        "unit": "",
+        "note": "as per taste",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Ministrone",
+    "description": "",
+    "servings": 3,
+    "servingLabel": "servings",
+    "ingredients": [
+      {
+        "name": "Onion",
+        "quantity": 150,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Carrots",
+        "quantity": 200,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Celery",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Garlic",
+        "quantity": 10,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Zucchini",
+        "quantity": 200,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Canned diced tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Water",
+        "quantity": 1000,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Small pasta (macaroni)",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Pre-cooked kidney beans / rajma",
+        "quantity": 400,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Dried oregano",
+        "quantity": 3,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Basil",
+        "quantity": 3,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Salt and pepper",
+        "quantity": null,
+        "unit": "",
+        "note": "as per taste",
+        "isBase": false
+      },
+      {
+        "name": "Olive oil",
+        "quantity": 30,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Fresh parsley",
+        "quantity": 5,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Japanese Cheesecake",
+    "description": "",
+    "servings": 8,
+    "servingLabel": "servings",
+    "ingredients": [
+      {
+        "name": "Cream cheese full fat, softened",
+        "quantity": 200,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Unsalted butter, softened",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Whole milk",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Large eggs separated",
+        "quantity": 300,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Granulated sugar",
+        "quantity": 130,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Maida",
+        "quantity": 60,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Cornstarch",
+        "quantity": 60,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Lemonzest",
+        "quantity": 2,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Lemon juice",
+        "quantity": 15,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Salt",
+        "quantity": null,
+        "unit": "",
+        "note": "as per taste",
+        "isBase": false
+      },
+      {
+        "name": "Icing sugar",
+        "quantity": 10,
+        "unit": "g",
+        "note": "optional",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "English Muffins",
+    "description": "",
+    "servings": 8,
+    "servingLabel": "pieces",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": 350,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Yeast",
+        "quantity": 7,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Salt",
+        "quantity": 6,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Sugar",
+        "quantity": 4.2,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Milk",
+        "quantity": 180,
+        "unit": "ml",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Butter softened",
+        "quantity": 4.7,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Semolina",
+        "quantity": null,
+        "unit": "",
+        "note": "as needed",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Hollandaise Sauce",
+    "description": "",
+    "servings": 4,
+    "servingLabel": "pieces",
+    "ingredients": [
+      {
+        "name": "Large egg yolks",
+        "quantity": 57,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Lemon juice",
+        "quantity": 5,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Dijon mustard",
+        "quantity": 2.7,
+        "unit": "g",
+        "note": "optional",
+        "isBase": false
+      },
+      {
+        "name": "Unsalted butter",
+        "quantity": 120,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Cayenne pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "note": "",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Chocobrownie",
+    "description": "",
+    "servings": 10,
+    "servingLabel": "pieces",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Coverture chocolate",
+        "quantity": 200,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Unsalted butter",
+        "quantity": 150,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Granulated sugar",
+        "quantity": 150,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Brown sugar",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Eggs",
+        "quantity": 168,
+        "unit": "g",
+        "note": "3 large",
+        "isBase": false
+      },
+      {
+        "name": "Vanilla extract",
+        "quantity": 4.2,
+        "unit": "g",
+        "note": "1 tsp",
+        "isBase": false
+      },
+      {
+        "name": "Cocoa powder",
+        "quantity": 30,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Salt",
+        "quantity": 2.5,
+        "unit": "g",
+        "note": "half tsp",
+        "isBase": false
+      },
+      {
+        "name": "Walnuts/Cashews",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Churros",
+    "description": "",
+    "servings": 24,
+    "servingLabel": "pieces",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": 150,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Water",
+        "quantity": 250,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Unsalted butter",
+        "quantity": 60,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Powdered sugar",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Eggs",
+        "quantity": 168,
+        "unit": "g",
+        "note": "3 large",
+        "isBase": false
+      },
+      {
+        "name": "Vanilla extract",
+        "quantity": 4.2,
+        "unit": "g",
+        "note": "1 tsp",
+        "isBase": false
+      },
+      {
+        "name": "Heavy cream",
+        "quantity": 120,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Almonds",
+        "quantity": 30,
+        "unit": "g",
+        "note": "half tsp",
+        "isBase": false
+      },
+      {
+        "name": "Chocolate",
+        "quantity": 150,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Butter Eclairs",
+    "description": "",
+    "servings": 24,
+    "servingLabel": "pieces",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": 150,
+        "unit": "g",
+        "note": "",
+        "isBase": true
+      },
+      {
+        "name": "Water",
+        "quantity": 125,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Milk",
+        "quantity": 125,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Unsalted butter",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Castor sugar",
+        "quantity": 100,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Lemon juice",
+        "quantity": 125,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Eggs",
+        "quantity": 224,
+        "unit": "g",
+        "note": "4 large",
+        "isBase": false
+      },
+      {
+        "name": "Vanilla extract",
+        "quantity": 4.2,
+        "unit": "g",
+        "note": "1 tsp",
+        "isBase": false
+      },
+      {
+        "name": "Cold butter",
+        "quantity": 90,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      },
+      {
+        "name": "Icing sugar",
+        "quantity": 150,
+        "unit": "g",
+        "note": "half tsp",
+        "isBase": false
+      },
+      {
+        "name": "Lemon zest",
+        "quantity": 2,
+        "unit": "g",
+        "note": "",
+        "isBase": false
+      }
+    ],
+    "steps": []
+  }
+]

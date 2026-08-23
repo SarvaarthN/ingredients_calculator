@@ -1,0 +1,32 @@
+{
+  "name": "ingredients-calc",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "tsx --test tests/*.test.ts",
+    "parse:xlsx": "node scripts/parse-xlsx.mjs",
+    "seed": "node scripts/seed.mjs"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.35.0",
+    "jose": "^6.0.11",
+    "next": "^15.5.23",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "dotenv": "^16.5.0",
+    "tailwindcss": "^4.1.11",
+    "tsx": "^4.23.12",
+    "typescript": "^5.8.3"
+  }
+}
