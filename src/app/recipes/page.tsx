@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { DeleteRecipeButton } from "@/components/DeleteRecipeButton";
 import { ImportStarterButton } from "@/components/ImportStarterButton";
+import { RecipeList, type RecipeSummary } from "@/components/RecipeList";
 import seedData from "@/data/seed-recipes.json";
 import { requireUser } from "@/lib/guard";
 import { listRecipes } from "@/lib/recipes";
@@ -15,6 +15,24 @@ export const dynamic = "force-dynamic";
 export default async function RecipesPage() {
   const user = await requireUser("/recipes");
   const recipes = await listRecipes(user.id);
+
+  const summaries: RecipeSummary[] = recipes.map((recipe) => {
+    const { grams } = recipeTotalGrams(recipe);
+    return {
+      id: recipe.id,
+      name: recipe.name,
+      description: recipe.description,
+      servings: recipe.servings,
+      servingLabel: recipe.servingLabel,
+      ingredientCount: recipe.ingredients.length,
+      totalWeight: grams === null ? null : formatGrams(grams),
+      baseName: baseIngredient(recipe)?.name,
+      ingredientNames: recipe.ingredients.map((i) => i.name.toLowerCase()),
+      // Recipes saved before createdAt existed fall back to their edit time.
+      createdAt: recipe.createdAt ?? recipe.updatedAt,
+      updatedAt: recipe.updatedAt,
+    };
+  });
 
   const saved = new Set(recipes.map((r) => r.name.trim().toLowerCase()));
   const missingFromSheet = seedData.filter((r) => !saved.has(r.name.trim().toLowerCase())).length;
@@ -30,7 +48,7 @@ export default async function RecipesPage() {
           <p className="mt-2 text-[15px] text-muted">
             {recipes.length === 0
               ? "Nothing saved yet."
-              : `${recipes.length} recipe${recipes.length === 1 ? "" : "s"}, most recently edited first.`}
+              : `${recipes.length} recipe${recipes.length === 1 ? "" : "s"} saved.`}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
@@ -80,64 +98,7 @@ export default async function RecipesPage() {
           </div>
         </div>
       ) : (
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {recipes.map((recipe) => {
-            const base = baseIngredient(recipe);
-            const { grams } = recipeTotalGrams(recipe);
-            const counted = recipe.ingredients.length;
-
-            return (
-              <li key={recipe.id} className="card card-link flex flex-col">
-                <Link href={`/recipes/${recipe.id}`} className="card-pad flex-1">
-                  <h2 className="font-display text-[24px] leading-tight">{recipe.name}</h2>
-                  {recipe.description && (
-                    <p className="mt-2 line-clamp-2 text-[14px] leading-relaxed text-muted">
-                      {recipe.description}
-                    </p>
-                  )}
-
-                  <dl className="mt-4 flex flex-wrap gap-x-5 gap-y-1.5 text-[13px] text-muted">
-                    <div className="flex gap-1.5">
-                      <dt className="sr-only">Written for</dt>
-                      <dd className="tnum">
-                        {recipe.servings} {recipe.servingLabel}
-                      </dd>
-                    </div>
-                    <div className="flex gap-1.5">
-                      <dt className="sr-only">Ingredients</dt>
-                      <dd className="tnum">
-                        {counted} ingredient{counted === 1 ? "" : "s"}
-                      </dd>
-                    </div>
-                    {grams !== null && (
-                      <div className="flex gap-1.5">
-                        <dt className="sr-only">Total weight</dt>
-                        <dd className="tnum">{formatGrams(grams)} total</dd>
-                      </div>
-                    )}
-                  </dl>
-
-                  {base && (
-                    <p className="mt-4">
-                      <span className="chip chip-accent">Base · {base.name}</span>
-                    </p>
-                  )}
-                </Link>
-
-                <div className="flex items-center gap-2 border-t border-line px-5 py-3">
-                  <Link href={`/recipes/${recipe.id}`} className="btn btn-ghost btn-sm">
-                    Scale
-                  </Link>
-                  <Link href={`/recipes/${recipe.id}/edit`} className="btn btn-ghost btn-sm">
-                    Edit
-                  </Link>
-                  <span className="flex-1" />
-                  <DeleteRecipeButton id={recipe.id} name={recipe.name} />
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        <RecipeList recipes={summaries} />
       )}
     </div>
   );
