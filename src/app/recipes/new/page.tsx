@@ -22,7 +22,11 @@ export default async function NewRecipePage() {
         <h1 className="font-display text-[36px] leading-tight md:text-[44px]">Add a recipe</h1>
         <p className="mt-2 max-w-[560px] text-[15px] leading-relaxed text-muted">
           Write it out once, at whatever size you normally cook it. The three scaling modes work off
-          what you enter here.
+          what you enter here. Already have it in a PDF or Word file?{" "}
+          <Link href="/recipes/upload" className="link">
+            Upload it instead
+          </Link>
+          .
         </p>
       </div>
 

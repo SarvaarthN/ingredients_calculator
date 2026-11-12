@@ -42,6 +42,21 @@ plausible-looking wrong number.
 what a cup of each ingredient weighs, oven temperatures, and baker's percentages.
 `/convert` is a one-off converter.
 
+## Uploading a recipe
+
+`/recipes/upload` takes a PDF, DOCX or DOC (up to 4 MB) and saves the recipes in it
+automatically. Any layout works: tables, lists, prose, scanned pages, or several
+recipes in one file. PDFs go to Gemini as they are, so scans are read too. Word files
+are turned into text first (`mammoth` for .docx, `word-extractor` for .doc). Gemini
+returns structured JSON that is checked against the same schema as the recipe form.
+
+The file is held in memory for the length of the request and then dropped. It is
+never written to disk or to Redis; only the resulting recipes are saved. This uses
+Gemini's free tier, so heavy use can hit its rate limit; the page then asks you to
+retry shortly. Note that Google may use free-tier inputs to improve its products.
+
+Code: `src/lib/recipe-extract.ts`, `src/app/api/recipes/upload/route.ts`.
+
 ---
 
 ## Running it
@@ -62,6 +77,8 @@ run dev` works immediately — recipes vanish on restart, and the recipe list sa
 | `UPSTASH_REDIS_REST_URL`   | persistence           | Upstash console → your database → REST API                  |
 | `UPSTASH_REDIS_REST_TOKEN` | persistence           | Same place                                                   |
 | `AUTH_SECRET`              | sessions (required in production) | 32+ random characters                            |
+| `GEMINI_API_KEY`           | recipe upload         | Free key from [Google AI Studio](https://aistudio.google.com/apikey) |
+| `GEMINI_MODEL`             | recipe upload (optional) | Defaults to `gemini-flash-latest`                        |
 | `SEED_EMAIL`               | `npm run seed` only   | Account that receives the imported recipes                   |
 | `SEED_PASSWORD`            | `npm run seed` only   | At least 8 characters                                        |
 

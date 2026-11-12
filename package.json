@@ -14,9 +14,11 @@
   "dependencies": {
     "@upstash/redis": "^1.35.0",
     "jose": "^6.0.11",
+    "mammoth": "^1.13.0",
     "next": "^15.5.23",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "word-extractor": "^1.0.4",
     "zod": "^3.25.76"
   },
   "devDependencies": {

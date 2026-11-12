@@ -41,6 +41,9 @@ export default async function RecipesPage() {
               label={`Import ${missingFromSheet} from spreadsheet`}
             />
           )}
+          <Link href="/recipes/upload" className="btn btn-outline">
+            Upload a file
+          </Link>
           <Link href="/recipes/new" className="btn btn-accent">
             Add a recipe
           </Link>
@@ -64,9 +67,14 @@ export default async function RecipesPage() {
             ingredient. Scaling comes free after that.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3">
-            <Link href="/recipes/new" className="btn btn-accent inline-flex">
-              Add your first recipe
-            </Link>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/recipes/new" className="btn btn-accent inline-flex">
+                Add your first recipe
+              </Link>
+              <Link href="/recipes/upload" className="btn btn-outline inline-flex">
+                Upload a PDF or Word file
+              </Link>
+            </div>
             <span className="text-[12px] uppercase tracking-[0.14em] text-muted">or</span>
             <ImportStarterButton count={seedData.length} />
           </div>
